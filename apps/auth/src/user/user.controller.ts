@@ -29,6 +29,7 @@ export class UserController {
     const res = await this.userService.create(createUserDto);
     return res;
   }
+
   @MessagePattern('get-all-user')
   async getAllUser() {
     const res = await this.userService.findAll();

@@ -22,6 +22,20 @@ import { SchemaRegistry } from '@kafkajs/confluent-schema-registry';
         },
       },
       {
+        name: 'PRODUCT_SERVICE', // tên của gói kafka để sử dụng trong sercvice, controller
+        transport: Transport.KAFKA, // phương thức  giao tiếp của microservice
+        options: {
+          client: {
+            clientId: 'product', //  tên
+            brokers: ['localhost:9092'], // port hoạt động của kafka broker
+          },
+          consumer: {
+            groupId: 'product-consumer',
+            allowAutoTopicCreation: true,
+          },
+        },
+      },
+      {
         name: 'AUTH_SERVICE', // tên của gói kafka để sử dụng trong sercvice, controller
         transport: Transport.KAFKA, // phương thức  giao tiếp của microservice
         options: {

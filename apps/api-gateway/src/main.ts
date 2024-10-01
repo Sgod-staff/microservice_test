@@ -9,10 +9,9 @@ async function bootstrap() {
   app.setGlobalPrefix(globalPrefix);
   // Cấu hình Swagger
   const config = new DocumentBuilder()
-    .setTitle('Cats example')
-    .setDescription('The cats API description')
+    .setTitle('Kafka service')
+    .setDescription('The API make with love')
     .setVersion('1.0')
-    .addTag('cats')
     .build();
 
   const document = SwaggerModule.createDocument(app, config);

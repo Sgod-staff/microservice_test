@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="B-PbosWtjMyFhu7Jr_gw" name="Page-1">
-        <mxGraphModel dx="2289" dy="2431" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+        <mxGraphModel dx="2130" dy="2253" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -20,9 +20,9 @@
                     <mxGeometry x="3326.36" y="-880" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="5" value="Product service" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="3090" y="-920" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="3090" y="-880" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="13" value="grpc" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=20;" parent="1" vertex="1">
+                <mxCell id="13" value="grpc" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=0;" parent="1" vertex="1">
                     <mxGeometry x="3260" y="-855" width="20" height="10" as="geometry"/>
                 </mxCell>
                 <mxCell id="23" value="kafka" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-90;" parent="1" vertex="1">
@@ -78,9 +78,6 @@
                             <mxPoint x="2620" y="800"/>
                         </Array>
                     </mxGeometry>
-                </mxCell>
-                <mxCell id="63" value="Crud&amp;nbsp;&lt;br&gt;auth jwt&lt;br&gt;just retun jwt or startus" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-                    <mxGeometry x="-850" y="-340" width="80" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="64" value="Client" style="rounded=1;whiteSpace=wrap;html=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" parent="1" vertex="1">
                     <mxGeometry x="1550" y="-130" width="120" height="60" as="geometry"/>
@@ -411,29 +408,29 @@
                 <mxCell id="190" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
                     <mxGeometry x="1185" y="-1700" width="1530" height="1700" as="geometry"/>
                 </mxCell>
-                <mxCell id="196" value="" style="endArrow=classic;startArrow=classic;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="5" target="3">
+                <mxCell id="196" value="" style="endArrow=classic;startArrow=classic;html=1;entryX=0.046;entryY=0.017;entryDx=0;entryDy=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryPerimeter=0;" parent="1" source="5" target="4" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="3220" y="-920" as="sourcePoint"/>
                         <mxPoint x="3260" y="-970" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="197" value="" style="endArrow=classic;startArrow=classic;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;exitX=0.442;exitY=-0.001;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="5" target="2">
+                <mxCell id="197" value="" style="endArrow=classic;startArrow=classic;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;exitX=0.442;exitY=-0.001;exitDx=0;exitDy=0;exitPerimeter=0;fillColor=#e3c800;strokeColor=#B09500;" parent="1" source="5" target="2" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="3160" y="-900" as="sourcePoint"/>
                         <mxPoint x="3210" y="-950" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="199" value="kafka" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-35;" vertex="1" parent="1">
-                    <mxGeometry x="3240" y="-970" width="30" height="10" as="geometry"/>
+                <mxCell id="199" value="kafka" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=0;" parent="1" vertex="1">
+                    <mxGeometry x="3260" y="-890" width="30" height="10" as="geometry"/>
                 </mxCell>
-                <mxCell id="200" value="" style="endArrow=classic;startArrow=classic;html=1;exitX=-0.006;exitY=0.628;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="4" target="5">
+                <mxCell id="200" value="" style="endArrow=classic;startArrow=classic;html=1;exitX=-0.006;exitY=0.628;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.991;entryY=0.621;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="4" target="5" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="3420" y="-830" as="sourcePoint"/>
                         <mxPoint x="3470" y="-880" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="202" value="grpc" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-35;" vertex="1" parent="1">
-                    <mxGeometry x="3210" y="-990" width="20" height="10" as="geometry"/>
+                <mxCell id="202" value="grpc" style="text;strokeColor=#B09500;align=center;fillColor=#e3c800;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-35;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="3220" y="-980" width="20" height="10" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
