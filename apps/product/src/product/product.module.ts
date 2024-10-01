@@ -9,17 +9,6 @@ import { join } from 'path';
 @Module({
   imports: [
     MongooseModule.forFeature([{ name: Product.name, schema: ProductSchema }]),
-    ClientsModule.register([
-      {
-        name: 'USER_PACKAGE',
-        transport: Transport.GRPC,
-        options: {
-          package: 'user',
-          protoPath: join(__dirname, '../../../apps/product/proto/user.proto'),
-          url: 'localhost:4003',
-        },
-      },
-    ]),
   ],
   controllers: [ProductController],
   providers: [ProductService],

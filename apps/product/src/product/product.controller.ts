@@ -44,20 +44,4 @@ export class ProductController {
     const { id } = data;
     return this.productService.delete(id);
   }
-
-  @GrpcMethod('ProductService', 'GetProductsByUserId')
-  async getGrpc(
-    data: { id: number },
-    metadata: Metadata,
-    call: ServerUnaryCall<any, any>
-  ): Promise<{ products: any[] }> {
-    const products = await this.productService.findAll();
-    const mappedProducts = products.map((product) => ({
-      _id: product._id.toString(),
-      name: product.name,
-      price: product.price,
-    }));
-    console.log('grpc call here');
-    return { products: mappedProducts };
-  }
 }

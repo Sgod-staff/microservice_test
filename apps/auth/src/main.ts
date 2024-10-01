@@ -8,6 +8,8 @@ import { NestFactory } from '@nestjs/core';
 
 import { AppModule } from './app/app.module';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
+import { SchemaRegistry } from '@kafkajs/confluent-schema-registry';
+import { Kafka } from 'kafkajs';
 
 async function bootstrap() {
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(

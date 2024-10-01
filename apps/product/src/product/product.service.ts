@@ -7,20 +7,11 @@ import { Model } from 'mongoose';
 import { Observable } from 'rxjs';
 import { ClientGrpc } from '@nestjs/microservices';
 
-interface UserService {
-  GetUsersByProductId(data: { id: number }): Observable<{ users: any[] }>;
-}
 @Injectable()
 export class ProductService {
-  private userService: UserService;
   constructor(
-    @InjectModel(Product.name) private readonly productModel: Model<Product>,
-    @Inject('USER_PACKAGE') private client: ClientGrpc
+    @InjectModel(Product.name) private readonly productModel: Model<Product>
   ) {}
-
-  onModuleInit() {
-    this.userService = this.client.getService<UserService>('UserService');
-  }
 
   async create(createProductDto: CreateProductDto) {
     return await this.productModel.create(createProductDto);
@@ -39,15 +30,5 @@ export class ProductService {
   }
   async delete(id: string) {
     return await this.productModel.findByIdAndDelete(id);
-  }
-  async getProductAndUsers(productId: number, userId: number) {
-    const product = await this.productModel.findById(productId);
-    const { users } = await this.userService
-      .GetUsersByProductId({ id: userId })
-      .toPromise(); // Chuyển Observable thành Promise
-    return {
-      product,
-      users,
-    };
   }
 }

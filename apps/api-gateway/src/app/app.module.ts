@@ -1,25 +1,14 @@
-import { Module } from '@nestjs/common';
+import { Module, OnModuleInit } from '@nestjs/common';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { join } from 'path';
+import { SchemaRegistry } from '@kafkajs/confluent-schema-registry';
 
 @Module({
   imports: [
     ClientsModule.register([
-      {
-        name: 'USER_PACKAGE',
-        transport: Transport.GRPC,
-        options: {
-          package: 'user',
-          protoPath: join(
-            __dirname,
-            '../../../apps/api-gateway/proto/user.proto'
-          ),
-          url: 'localhost:4003', // Port của User microservice
-        },
-      },
       {
         name: 'PRODUCT_PACKAGE',
         transport: Transport.GRPC,
@@ -33,21 +22,32 @@ import { join } from 'path';
         },
       },
       {
-        name: 'AUTH_SERVICE',
-        transport: Transport.KAFKA,
+        name: 'AUTH_SERVICE', // tên của gói kafka để sử dụng trong sercvice, controller
+        transport: Transport.KAFKA, // phương thức  giao tiếp của microservice
         options: {
           client: {
-            clientId: 'auth',
-            brokers: ['localhost:9092'],
+            clientId: 'auth', //  tên
+            brokers: ['localhost:9092'], // port hoạt động của kafka broker
           },
           consumer: {
             groupId: 'auth-consumer',
+            allowAutoTopicCreation: true,
           },
         },
       },
     ]),
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    {
+      provide: 'SCHEMA_REGISTRY',
+      useFactory: () => {
+        return new SchemaRegistry({
+          host: 'http://localhost:8081',
+        });
+      },
+    },
+  ],
 })
 export class AppModule {}
